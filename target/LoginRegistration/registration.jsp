@@ -45,7 +45,7 @@
 		</table>
 	</form>
 <h4>Already have an account?</h4>
-		<a href="login.jsp">Log In Here</a>
+		<a href="index.jsp">Log In Here</a>
 
 </body>
 </html>

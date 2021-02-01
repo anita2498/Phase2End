@@ -7,7 +7,7 @@
 <title>Sign Up</title>
 </head>
 <body>
-
+<div align="center">
 	<h3>Register User</h3>
 	${msg }
 	<form  action="RegistrationServlet" method="post">
@@ -45,7 +45,7 @@
 		</table>
 	</form>
 <h4>Already have an account?</h4>
-		<a href="login.jsp">Log In Here</a>
-
+		<a href="index.jsp">Log In Here</a>
+</div>
 </body>
 </html>

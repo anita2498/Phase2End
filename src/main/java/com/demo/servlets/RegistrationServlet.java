@@ -31,12 +31,12 @@ public class RegistrationServlet extends HttpServlet {
 		registerObj.setPwd(request.getParameter("Password"));
 
 		if (registerModel.update(registerObj)) {
-			request.setAttribute("msg", "Sign Up Complete,Log in to continue.. <a href=\\\"/login.jsp\\\">Log In</a> ");
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.setAttribute("msg", "Sign Up Complete,Log in to continue.. <a href=\\\"/index.jsp\\\">Log In</a> ");
+			request.getRequestDispatcher("index.jsp").forward(request, response);
 		} else {
 			request.setAttribute("msg", "Registration Failed");
 		}
-		request.getRequestDispatcher("registration.jsp").forward(request, response);
+		//request.getRequestDispatcher("registration.jsp").forward(request, response);
 	}
 
 }

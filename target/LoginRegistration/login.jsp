@@ -7,8 +7,9 @@
 <title>Login Here</title>
 </head>
 <body>
+
 	<h3>Login User</h3>
-	${msg}
+
 	<form action="LoginServlet" method="post">
 		<table cellpadding="2" cellspacing="2">
 			<tr>

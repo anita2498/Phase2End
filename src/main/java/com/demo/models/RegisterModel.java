@@ -27,7 +27,7 @@ public class RegisterModel {
 			}
 			result = false;
 		} finally {
-			session.close();
+			//session.close();
 		}
 		return result;
 	}
@@ -37,7 +37,7 @@ public class RegisterModel {
 		sessionFactory.beginTransaction();
 		Register u = (Register) ((Session) sessionFactory).createQuery("FROM Register R WHERE R.email= :email")
 				.setParameter("email", userid).uniqueResult();
-		sessionFactory.close();
+		//sessionFactory.close();
 
 		return u;
 

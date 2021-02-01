@@ -26,8 +26,8 @@ public class LoginServlet extends HttpServlet {
 		if ((RegisterModel.validate(request.getParameter("email"), request.getParameter("Password")))) {
 			request.getRequestDispatcher("welcome.jsp").forward(request, response);
 		} else {
-			request.setAttribute("msg", "Login Failed");
-			request.getRequestDispatcher("registration.jsp").forward(request, response);
+			request.setAttribute("msg", "<div style=\"border:1px dotted red;padding:2%;\"> Invalid user Credentials</div>");
+			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 
 	}
