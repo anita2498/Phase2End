@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.demo.entities.Register;
 import com.demo.models.RegisterModel;
 
+//Servlet mapping is done from web.xml
 public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -22,6 +23,7 @@ public class RegistrationServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		RegisterModel registerModel = new RegisterModel();
 		Register registerObj = new Register();
 		registerObj.setFirstname(request.getParameter("First_Name"));
@@ -31,12 +33,17 @@ public class RegistrationServlet extends HttpServlet {
 		registerObj.setPwd(request.getParameter("Password"));
 
 		if (registerModel.update(registerObj)) {
-			request.setAttribute("msg", "Sign Up Complete,Log in to continue.. <a href=\\\"/index.jsp\\\">Log In</a> ");
+			// If the Registration is successful, takes the user to index page for login.
+			request.setAttribute("msg",
+					"<div style=\"border:1px dotted green;padding:2%;\">" + "Sign Up Complete,Log in to continue.. ");
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		} else {
-			request.setAttribute("msg", "Registration Failed");
+			// If the userid already exists, gives the error message and redirects to the
+			// registration page for new account creation.
+			request.setAttribute("msg", "<div style=\"border:1px dotted red;padding:2%;\">"
+					+ "Registration Failed, Username already exists");
+			request.getRequestDispatcher("registration.jsp").forward(request, response);
 		}
-		//request.getRequestDispatcher("registration.jsp").forward(request, response);
 	}
 
 }

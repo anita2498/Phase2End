@@ -1,5 +1,5 @@
-D:\project\eclipse workspace\LoginRegistration\src\main\java\com\demo\servlets\RegistrationServlet.java
-D:\project\eclipse workspace\LoginRegistration\src\main\java\com\demo\servlets\LoginServlet.java
-D:\project\eclipse workspace\LoginRegistration\src\main\java\com\demo\models\HibernateUtil.java
-D:\project\eclipse workspace\LoginRegistration\src\main\java\com\demo\entities\Register.java
-D:\project\eclipse workspace\LoginRegistration\src\main\java\com\demo\models\RegisterModel.java
+D:\project\eclipse workspace\Phase3End\src\main\java\com\demo\servlets\RegistrationServlet.java
+D:\project\eclipse workspace\Phase3End\src\main\java\com\demo\models\RegisterModel.java
+D:\project\eclipse workspace\Phase3End\src\main\java\com\demo\models\HibernateUtil.java
+D:\project\eclipse workspace\Phase3End\src\main\java\com\demo\entities\Register.java
+D:\project\eclipse workspace\Phase3End\src\main\java\com\demo\servlets\LoginServlet.java

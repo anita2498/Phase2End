@@ -1,1 +1,5 @@
+com\demo\entities\Register.class
+com\demo\servlets\RegistrationServlet.class
+com\demo\models\RegisterModel.class
+com\demo\servlets\LoginServlet.class
 com\demo\models\HibernateUtil.class

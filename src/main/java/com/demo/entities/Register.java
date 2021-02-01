@@ -10,26 +10,28 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name= "user_table")
+@Table(name = "user_table")
 public class Register implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
+
+	// entity class containing details.
+	// Getters and Setters are generated.
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
+	@Column(name = "id")
 	private int id;
-	@Column(name="firstName")
+	@Column(name = "firstName")
 	private String firstname;
-	@Column(name="middleName")
+	@Column(name = "middleName")
 	private String middlename;
-	@Column(name="lastName")
+	@Column(name = "lastName")
 	private String lastname;
-	@Column(name="email", unique=true)
+	@Column(name = "email", unique = true)
 	private String email;
-	@Column(name="pwd")
+	@Column(name = "pwd")
 	private String pwd;
-	
 
 	public int getId() {
 		return id;
@@ -78,7 +80,5 @@ public class Register implements Serializable {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-
-	
 
 }

@@ -1,15 +1,15 @@
 package com.demo.models;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+
 import com.demo.entities.Register;
-import com.demo.models.HibernateUtil;
 
 public class RegisterModel {
 
 	protected static Session sessionFactory = HibernateUtil.getSessionFactory().openSession();
 
+	// Function to save register details obtained from user to the database.
 	@SuppressWarnings("deprecation")
 	public boolean update(Register userRegister) {
 		boolean result = true;
@@ -26,35 +26,30 @@ public class RegisterModel {
 				transaction.rollback();
 			}
 			result = false;
-		} finally {
-			//session.close();
 		}
 		return result;
 	}
 
+	// Function to search the database for existing elements with the credentials
+	// entered by the user.
 	public static Register find(String userid) {
 		sessionFactory = HibernateUtil.getSessionFactory().openSession();
 		sessionFactory.beginTransaction();
+		// Hibernate Query
 		Register u = (Register) ((Session) sessionFactory).createQuery("FROM Register R WHERE R.email= :email")
 				.setParameter("email", userid).uniqueResult();
-		//sessionFactory.close();
-
-		return u;
-
+		return u; // returns the information.
 	}
 
+	// Function to validate the userid and password entered by the user.
 	public static boolean validate(String userid, String pwd) {
-
 		Register u = RegisterModel.find(userid);
 		if (u != null) {
 			if (u.getPwd().equals(pwd)) {
 				return true;
 			}
-
 		}
-
 		return false;
-
 	}
 
 }
